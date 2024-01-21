@@ -1,0 +1,253 @@
+ <!DOCTYPE html>
+ <html lang="eng">
+
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        
+
+        <title>My cv portfolio</title>
+        
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/b9dac2fe42.js" crossorigin="anonymous"></script>
+        
+
+    </head>
+  
+
+
+
+        <body>
+            <div id="header">
+
+                 <!-- Intro page-->
+                <div class="container">
+                    <nav>
+                        <img src="images/logo2.png" class="logo">
+                        
+                         <!-- navigation bar-->
+                        <ul id="sidemenu">
+                            <li><a href="#header" >Home</a></li>
+                            <li><a href="#about" >About</a></li>
+                            <li><a href="#services" >Services</a></li>
+                            <li><a href="#portfolio" >Portfolio</a></li>
+                            <li><a href="#contact" >Contact</a></li>
+                            <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                        </ul>
+                        <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+                     </nav>
+
+                     <div class="header-text">
+                        <p>Computer Science Student</p>
+                        <h1>Hi, I'm <span>Reage</span><br>Nkoana from  South Africa </h1>
+
+                     </div>
+                </div>
+            </div>
+             <!-- end of intro page -->
+
+
+            <!-- About page-->
+            <div id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="about-col-1">
+                            <img src="images/user2.png">
+                        </div>
+                        <div class="about-col-2">
+                            <h1 class="sub-title"> About Me</h1>
+                            <p>
+                                I am a skilled and passionate Computer Science student with a background in creating software programs, visually appealing, and user-friendly websites with seamless backend functionality. My experience extends to both design principles and backend operations, showcasing a strong understanding of the entire development process. As a problem solver, I possess a keen eye for detail, ensuring precision in every aspect of my work. Proficient in a variety of programming languages including HTML, CSS, Javascript, Java, C++, C#, Python, Delphi,Visual Basic and ASP.NET, I also have hands-on experience with design and editing software such as Adobe Photoshop and Capcut.
+                            </p>
+                            <div class="tab-titles">
+                                <p class="tab-links active-link " onclick="opentab('skills')">Skills</p>
+                                <p class="tab-links"  onclick="opentab('experience')">Experience</p>
+                                <p class="tab-links"  onclick="opentab('education')">Education</p>
+                            </div>
+
+                            <div class="tab-contents active-tab" id="skills">
+                                <ul>
+                                    <li><span>Software Development</span><br>Intermediate in creating software applications using languages such as C++, Java, Python, and more.</li>
+                                    <li><span>Website Development</span><br>Skilled in both front-end (HTML, CSS, JavaScript) and back-end (Java, C#) web development.</li>
+                                    <li><span>App Development</span><br>Intermediate in building Android applications</li>
+                                    <li><span>Database Design and Management</span><br>Intermediate skills in designing and managing databases for efficient data storage and retrieval.</li>
+                                    <li><span>Video Editing</span><br>Proficient in video editing using industry-standard software.</li>
+                                    <li><span>Coding Languages</span><br>Well-versed in C++, Java, Python, HTML, CSS, JavaScript, C#, and more.</li>
+                                </ul>
+
+                            </div>
+                            <div class="tab-contents" id="experience">
+                                <ul>
+                                    <li><span>2021-Current</span><br></li>
+                                    
+                                    
+                                </ul>
+
+                            </div>
+                            <div class="tab-contents" id="education">
+                                <ul>
+                                    <li><span>2016-2020</span><br>Completed Matric at Hoerskool Birchleigh</li>
+                                    <li><span>2021-2022</span><br>Completed Artificial Intelligence in the 4IR course at University of Johannesburg</li>
+                                    <li><span>2021-Current</span><br>BSc in IT in Computer Science and Informatics at the University of Johannesburg</li>
+            
+                                </ul>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- End of About page-->
+
+
+            <!-- Services page-->
+
+            <div id="services">
+                <div class="container"> 
+                    <h1 class="sub-title">Services</h1>
+                        <div class="services-list">
+                            <div>
+                                <i class="fa-solid fa-code"></i>
+                                <h2>Web Development and Database Management</h2>
+                                <p>In the realm of web development, I create stylish websites and custom software, endeavoring to provide a seamless online experience. Additionally, my focus includes database management—designing and optimizing databases for secure and efficient data handling within applications.</p>
+                                <a href="#">Learn more</a>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-crop-simple"></i>
+                                <h2>AI Solutions</h2>
+                                <p>Leveraging the power of artificial intelligence to create intelligent solutions. I excel in building applications that utilize AI to address challenges and streamline processes for enhanced efficiency. </p>
+                                <a href="#">Learn more</a>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-tablet-screen-button"></i>
+                                <h2>Networking</h2>
+                                <p>Explore my networking services, showcasing expertise in designing robust network architectures, implementing advanced protocols like SMTP and POP3, and addressing challenges in JavaFX projects. My hands-on experience spans web development, artificial intelligence, and game development, converging to provide innovative solutions for enhanced connectivity and user experiences.</p>
+                                <a href="#">Learn more</a>
+                            </div>                          
+                        </div>
+                </div>
+            </div>
+
+            <!-- End of Services page-->
+
+
+            <!-- Portfolio page-->
+            <div id="portfolio">
+                <div class="container">
+                    <h1 class="sub-title">My Projects</h1>
+                    <div class="work-list">
+                        <div class="work">
+                            <img src="images/work-1.png">
+                            <div class="layer">
+                                <h3>E-commerce Website</h3>
+                                <p>A functional e-commerce platform showcasing my skills in web development. Features include product browsing, shopping cart management, and more.</p>
+                                <a href="https://github.com/ReageNkoana/Earthwise-eCommerce_Website"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                        <div class="work">
+                            <img src="images/work-2.png">
+                            <div class="layer">
+                                <h3>AI Snake Game</h3>
+                                <p>A machine learning-driven Snake game demonstrating my expertise in artificial intelligence and game development. The snake intelligently maneuvers through the game, showcasing the power of reinforcement learning.</p>
+                                <a href="https://github.com/ReageNkoana/SnakeGameAI"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                        <div class="work">
+                            <img src="images/work-3.png">
+                            <div class="layer">
+                                <h3>JavaFX Networking Project</h3>
+                                <p>Developed a comprehensive JavaFX application involving networking functionalities. This project includes the implementation of a local host server and client to simulate audio file downloads. The project demonstrates proficiency in Java, JavaFX, and networking protocols.</p>
+                                <a href="https://github.com/ReageNkoana/Client-Server-Audio-Downloader"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://github.com/ReageNkoana" class="btn">See more</a>
+                </div>
+            </div>
+
+            <!-- End of Portfolio page-->
+
+
+            <!-- Contact page-->
+            <div id="contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="contact-left">
+                            <h1 class="sub-title">Contact Me</h1>
+                            <p><i class="fa-solid fa-paper-plane"></i>reagenkoana@gmail.com</p>
+                            <p><i class="fa-solid fa-square-phone"></i>066 236 0922</p>
+                            <div class="social-icons">
+                                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                                <a href=""><i class="fa-brands fa-twitter-square"></i></a>
+                                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                            </div>
+                            <a href="images/Reage-Nkoana-CV-Resume.pdf" download class="btn btn2">Download CV</a>
+                        </div>
+                        <div class="contact-right">
+                            <form action="https://api.web3forms.com/submit" method="POST">
+                                <input type="hidden" name="access_key" value="2ed07363-871f-4b96-b8f2-e1669face776">
+                                <input type="text" name="Name" placeholder="Your Name" required>  
+                                <input type="email" name="email" placeholder="Your Email" required>  
+                                <textarea name="message" rows="6" placeholder="Your Message" ></textarea>
+                                <button type="submit" class="btn btn2">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="copyright ">
+                    <p>Copyright © Reage.</p>
+                </div>
+            </div>
+
+
+
+
+            <script>
+                var tablinks=document.getElementsByClassName("tab-links");
+                var tabcontents=document.getElementsByClassName("tab-contents");
+
+                function opentab(tabname){
+
+                    for(tablink of tablinks){
+                        tablink.classList.remove("active-link");
+                    }
+
+                    for(tabcontent of tabcontents){
+                        tabcontent.classList.remove("active-tab");
+                    }
+
+                    event.currentTarget.classList.add("active-link");
+
+                    document.getElementById(tabname).classList.add("active-tab");
+
+                
+                }
+
+            </script>
+            <script>
+
+                var sidemenu= document.getElementById("sidemenu");
+
+                function openmenu(){
+                    sidemenu.style.right="0";
+                }
+                function closemenu(){
+                    sidemenu.style.right="-200px";
+                }
+
+                
+            </script>
+
+
+
+
+
+        </body>
+ </html>
