@@ -1,414 +1,441 @@
 <!DOCTYPE html>
-<html lang="eng">
-
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="description" content="Reage Nkoana's developer portfolio, featuring full-stack development experience, software projects, and technical skills.">
 
     <title>Reage Nkoana | Full-Stack Developer Portfolio</title>
 
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/b9dac2fe42.js" crossorigin="anonymous"></script>
-
-
 </head>
-
-
 
 <body>
     <div id="header">
-
-        <!-- Intro page-->
         <div class="container">
-            <nav>
-                <img src="images/logo2.png" class="logo">
+            <nav aria-label="Main navigation">
+                <a href="#header" aria-label="Return to home">
+                    <img src="images/logo2.png" class="logo" alt="Reage Nkoana logo">
+                </a>
 
-                <!-- navigation bar-->
                 <ul id="sidemenu">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                    <li><a href="#header" onclick="closemenu()">Home</a></li>
+                    <li><a href="#about" onclick="closemenu()">About</a></li>
+                    <li><a href="#services" onclick="closemenu()">Services</a></li>
+                    <li><a href="#portfolio" onclick="closemenu()">Portfolio</a></li>
+                    <li><a href="#contact" onclick="closemenu()">Contact</a></li>
+                    <li class="menu-icon-item">
+                        <button class="menu-icon-button" type="button" aria-label="Close navigation menu" onclick="closemenu()">
+                            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                        </button>
+                    </li>
                 </ul>
-                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+
+                <button class="menu-icon-button open-menu-button" type="button" aria-label="Open navigation menu" aria-controls="sidemenu" aria-expanded="false" onclick="openmenu()">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
             </nav>
 
             <div class="header-text">
-                <p>Full-Stack Developer</p>
+                <p>Full-Stack Developer | Software Engineer</p>
                 <h1>Hi, I'm <span>Reage</span><br>Nkoana from South Africa</h1>
+
+                <div class="hero-actions">
+                    <a href="#portfolio" class="btn btn2">View My Projects</a>
+                    <a href="#contact" class="hero-contact-link">Get in Touch</a>
+                </div>
             </div>
         </div>
     </div>
-    <!-- end of intro page -->
+    <!-- End of intro page -->
 
 
-    <!-- About page-->
+    <!-- About page -->
     <div id="about">
         <div class="container">
             <div class="row">
                 <div class="about-col-1">
-                    <img src="images/grad1.png">
+                    <img src="images/grad1.png" alt="Reage Nkoana at graduation">
                 </div>
+
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
                     <p>
-                        I'm a Full-Stack Developer and BSc IT graduate from the University of Johannesburg (Computer Science & Informatics, 2024). 
-                        Currently working at <strong>BDO South Africa</strong> as a Junior Software Developer Intern, building enterprise-scale 
-                        web applications with C#, ASP.NET, React, and TypeScript.
+                        I'm a Full-Stack Developer and a 2024 BSc Information Technology graduate from the University of Johannesburg, specialising in Computer Science and Informatics.
                         <br><br>
-                        I love building things that work, from full-stack web apps to blockchain systems and AI simulations. 
-                        I'm curious, hands-on, and always learning. Check out my work below or reach out if you'd like to collaborate.
+                        I work at <strong>BDO South Africa</strong>, contributing to software development within the BDO Digital Advisory team. My experience includes building and maintaining web applications, working with APIs and databases, and developing interfaces using technologies such as C#, ASP.NET Core, React, and TypeScript.
+                        <br><br>
+                        Outside of work, I enjoy exploring AI assistants, developer tools, and software projects that help me learn new technologies. I'm hands-on, curious, and always looking for opportunities to grow as a developer.
                     </p>
-                    <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('certifications')">Certifications and Coursework</p>
-                        <p class="tab-links" onclick="opentab('education')">Education</p>
-                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+
+                    <div class="tab-titles" role="tablist" aria-label="About me information">
+                        <p class="tab-links active-link" id="skills-tab" role="tab" tabindex="0" aria-selected="true" aria-controls="skills" onclick="opentab('skills', this)" onkeydown="handleTabKey(event, 'skills', this)">Skills</p>
+                        <p class="tab-links" id="certifications-tab" role="tab" tabindex="0" aria-selected="false" aria-controls="certifications" onclick="opentab('certifications', this)" onkeydown="handleTabKey(event, 'certifications', this)">Certifications and Coursework</p>
+                        <p class="tab-links" id="education-tab" role="tab" tabindex="0" aria-selected="false" aria-controls="education" onclick="opentab('education', this)" onkeydown="handleTabKey(event, 'education', this)">Education</p>
+                        <p class="tab-links" id="experience-tab" role="tab" tabindex="0" aria-selected="false" aria-controls="experience" onclick="opentab('experience', this)" onkeydown="handleTabKey(event, 'experience', this)">Experience</p>
                     </div>
 
-                    <div class="tab-contents active-tab" id="skills">
+                    <div class="tab-contents active-tab" id="skills" role="tabpanel" aria-labelledby="skills-tab">
                         <ul>
-                            <li><span>Full-Stack Development</span><br>Experienced in developing end-to-end web and
-                                mobile applications using .NET MAUI, Xamarin, ASP.NET, and REST APIs.</li>
-                            <li><span>Web Development</span><br>Skilled in front-end (HTML, CSS, JavaScript) and
-                                back-end (C#, Node.js, Java) development with responsive design practices.</li>
-                            <li><span>Mobile App Development</span><br>Proficient in building cross-platform apps for
-                                Android using Xamarin and .NET MAUI, with database and API integration.</li>
-                            <li><span>Database Design & Management</span><br>Experienced in SQL Server, MySQL, and
-                                SQLite for designing, managing, and querying relational databases efficiently.</li>
-                            <li><span>Software Engineering</span><br>Strong foundation in object-oriented programming,
-                                data structures, and software architecture using Java, C#, and Python.</li>
-                            <li><span>API Integration & Testing</span><br>Skilled in building and testing RESTful APIs
-                                using Postman, Swagger, and JSON with backend services.</li>
-                            <li><span>Version Control & CI/CD</span><br>Comfortable with Git, GitHub, and DevOps
-                                workflows; experienced with CI/CD tools and agile development practices.</li>
-                            <li><span>Coding Languages</span><br>Fluent in Java, C#, Python, JavaScript, C++, HTML, CSS,
-                                React, and SQL.</li>
-                            <li><span>Additional Skills</span><br>Basic experience in video editing, UI/UX design, and
-                                cloud tools like Azure.</li>
+                            <li><span>Full-Stack and Web Development</span><br>Developing front-end interfaces and back-end functionality using React, TypeScript, JavaScript, C#, ASP.NET Core, Laravel, and Inertia.js.</li>
+                            <li><span>API Development and Integration</span><br>Working with RESTful APIs, backend services, JSON, Postman, and Swagger to connect application interfaces and data.</li>
+                            <li><span>Database Design and Management</span><br>Experience with MySQL, SQL Server, PostgreSQL, and SQLite, including relational database design and SQL queries.</li>
+                            <li><span>Programming and Software Engineering</span><br>Object-oriented programming, data structures, application architecture, debugging, and testing using C#, Java, and Python.</li>
+                            <li><span>Mobile Application Development</span><br>Experience with Xamarin.Forms and .NET MAUI for cross-platform application development.</li>
+                            <li><span>Version Control and Development Tools</span><br>Git, GitHub, Azure DevOps, Visual Studio, VS Code, Postman, and development workflows.</li>
+                            <li><span>Cloud and Deployment</span><br>Exposure to Microsoft Azure, Docker, and Render for application hosting, deployment, and environment management.</li>
+                            <li><span>Additional Technologies</span><br>HTML, CSS, C++, JavaScript, SQL, UI/UX fundamentals, and introductory machine learning concepts.</li>
                         </ul>
                     </div>
 
-                    <div class="tab-contents" id="certifications">
+                    <div class="tab-contents" id="certifications" role="tabpanel" aria-labelledby="certifications-tab" hidden>
                         <ul>
-                            <li>
-                                <span>2021</span><br>
-                                Completed Artificial Intelligence in the 4IR course at University of Johannesburg<br>
-                                <strong>Certificate Number:</strong> 01799226-01-9YYH<br>
-                                <strong>Document Type Code:</strong> SLPAI4IR<br>
-                                <strong>Ceremony Date:</strong> 01/12/2021 01:00 PM
-                            </li>
-                            <li>
-                                <span>2024</span><br>
-                                Completed Financial Literacy - Be Money Wise course at University of Johannesburg<br>
-                                <strong>Certificate Number:</strong> 01927584-01-7L91<br>
-                                <strong>Document Type Code:</strong> SLPFINLIT<br>
-                                <strong>Ceremony Date:</strong> 01/12/2024 01:00 PM
-                            </li>
-                            <li>
-                                <span>2024</span><br>
-                                Completed African Insights course at University of Johannesburg<br>
-                                <strong>Certificate Number:</strong> 01928354-01-EL96<br>
-                                <strong>Document Type Code:</strong> SLPAIOM<br>
-                                <strong>Ceremony Date:</strong> 01/12/2024 01:00 PM
-                            </li>
-                            <li>
-                                <span>2024</span><br>
-                                Completed Advanced Information Literacy course at University of Johannesburg<br>
-                                <strong>Status:</strong> Awarded<br>
-                                <em>(Certificate number not available)</em>
-                            </li>
-                            <li>
-                                <span>2024</span><br>
-                                Completed Sustainable Development Goals (SDGs) course at University of Johannesburg<br>
-                                <strong>Status:</strong> Awarded<br>
-                                <em>(Certificate number not available)</em>
-                            </li>
+                            <li><span>2021</span><br>Artificial Intelligence in the 4IR course<br>University of Johannesburg</li>
+                            <li><span>2024</span><br>Financial Literacy – Be Money Wise<br>University of Johannesburg</li>
+                            <li><span>2024</span><br>African Insights<br>University of Johannesburg</li>
+                            <li><span>2024</span><br>Advanced Information Literacy<br>University of Johannesburg</li>
+                            <li><span>2024</span><br>Sustainable Development Goals (SDGs) course<br>University of Johannesburg</li>
                         </ul>
                     </div>
 
-
-                    <div class="tab-contents" id="education">
+                    <div class="tab-contents" id="education" role="tabpanel" aria-labelledby="education-tab" hidden>
                         <ul>
-                            <li><span>2016-2020</span><br>Completed Matric at Hoërskool Birchleigh, Kempton Park</li>
-                            <li><span>2021-2024</span><br>Bachelor of Science in Information Technology — Computer Science & Informatics<br>University of Johannesburg</li>
+                            <li><span>2021–2024</span><br><strong>Bachelor of Science in Information Technology</strong><br>Computer Science and Informatics<br>University of Johannesburg</li>
+                            <li><span>2016–2020</span><br><strong>National Senior Certificate (Matric)</strong><br>Hoërskool Birchleigh, Kempton Park</li>
                         </ul>
                     </div>
 
-                    <!-- New Experience Tab -->
-                    <div class="tab-contents" id="experience">
+                    <div class="tab-contents" id="experience" role="tabpanel" aria-labelledby="experience-tab" hidden>
                         <ul>
                             <li>
-                                <span>Oct 2025 – Present</span><br>
-                                <strong>BDO South Africa — Junior Software Developer Intern</strong><br><br>
-                                • Contribute to the development and maintenance of enterprise full-stack applications
-                                using C#, ASP.NET, React, TypeScript, and MySQL.<br>
-                                • Develop and enhance a large-scale business workflow grading system with modules
-                                including applications, assessments, meetings, surveys, dashboards, reporting, and
-                                administration.<br>
-                                • Build and maintain RESTful APIs, backend services, database structures, and frontend
-                                interfaces.<br>
-                                • Debug, test, and resolve issues across frontend and backend layers to improve system
-                                stability and performance.<br>
-                                • Use Azure DevOps and Git for source control, work item tracking, and monitoring CI/CD
-                                pipeline builds in a collaborative development environment.
+                                <span>Oct 2026 – Present</span><br>
+                                <strong>BDO South Africa — Junior Developer (Fixed-Term Contract)</strong>
+                                <ul class="experience-points">
+                                    <li>Develop and maintain applications, contributing to frontend and backend functionality.</li>
+                                    <li>Work with RESTful APIs, databases, SQL queries, and application data.</li>
+                                    <li>Contribute to workflow automation, technical documentation, software testing, and development initiatives.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span>Oct 2025 – Sep 2026</span><br>
+                                <strong>BDO South Africa — Software Developer Intern</strong>
+                                <ul class="experience-points">
+                                    <li>Developed and enhanced business workflow applications using C#, ASP.NET Core, React, and TypeScript, including interfaces and REST APIs for assessments, surveys, reporting, and administrative workflows.</li>
+                                    <li>Independently developed a full-stack client engagement platform using Laravel, React, TypeScript, Inertia.js, and MySQL, with client questionnaires, document management, progress tracking, and automated email communications.</li>
+                                    <li>Worked with monolithic and microservice architectures, API integrations, backend services, and databases, while testing, debugging, and resolving defects.</li>
+                                    <li>Used Git and Azure DevOps in development workflows, with exposure to Azure, Docker, and Render for deployment and environment management.</li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
-
                 </div>
             </div>
         </div>
-
-
     </div>
-    <!-- End of About page-->
+    <!-- End of About page -->
 
 
-    <!-- Services page-->
-
-    <!-- Services page-->
+    <!-- Technical Focus -->
     <div id="services">
         <div class="container">
-            <h1 class="sub-title">Services</h1>
+            <h1 class="sub-title">Technical Focus</h1>
+            <p class="section-intro">
+                Areas of software development I enjoy working in and continue to build experience with.
+            </p>
+
             <div class="services-list">
                 <div>
-                    <i class="fa-solid fa-code"></i>
+                    <i class="fa-solid fa-code" aria-hidden="true"></i>
                     <h2>Web Development</h2>
-                    <p>I build responsive and interactive web applications using modern frameworks and technologies. My
-                        work focuses on clean UI/UX, accessibility, and functional back-end integration to deliver
-                        user-friendly digital solutions.</p>
-                    <!--a href="https://www.youtube.com/watch?v=6G9XnhJ-6vA">Learn more</a-->
-                </div>
-                <div>
-                    <i class="fa-solid fa-database"></i>
-                    <h2>Database Management</h2>
-                    <p>I design and manage SQL databases with a focus on scalability, efficiency, and secure data
-                        handling. From schema design to API integration, I ensure databases support the app’s needs
-                        effectively.</p>
-                    <!--a href="#">Learn more</a-->
-                </div>
-                <div>
-                    <i class="fa-solid fa-mobile-screen"></i>
-                    <h2>Mobile Development</h2>
-                    <p>I develop cross-platform mobile applications using tools like Xamarin and .NET MAUI. My apps are
-                        optimized for performance and designed with intuitive user interfaces for a consistent
-                        experience across devices.</p>
-                    <!--a href="https://www.youtube.com/watch?v=6G9XnhJ-6vA">Learn more</a-->
-                </div>
-                <div>
-                    <i class="fa-solid fa-plug"></i>
-                    <h2>API Development</h2>
-                    <p>I create secure and scalable RESTful APIs that enable seamless data communication between
-                        front-end applications and databases. I use C#, ASP.NET Core, and JSON-based integration for
-                        full-stack efficiency.</p>
-                    <!--a href="https://www.youtube.com/watch?v=6G9XnhJ-6vA">Learn more</a-->
-                </div>
-                <div>
-                    <i class="fa-solid fa-cloud-arrow-up"></i>
-                    <h2>Cloud & Deployment</h2>
-                    <p>I handle full deployment lifecycles using platforms like Microsoft Azure. My services include
-                        blob storage, cloud database integration, and web API deployment with a focus on performance and
-                        security.</p>
-                    <!--a href="https://www.youtube.com/watch?v=6G9XnhJ-6vA">Learn more</a-->
+                    <p>Building responsive web interfaces and full-stack applications with React, TypeScript, Laravel, and ASP.NET Core.</p>
                 </div>
 
-                <!--div>
-                        <i class="fa-solid fa-crop-simple"></i>
-                        <h2>AI Solutions</h2>
-                        <p>Leveraging the power of artificial intelligence, I build intelligent applications that enhance processes and tackle complex challenges through advanced AI technologies.</p>
-                        <a href="#">Learn more</a>
-                    </div-->
                 <div>
-                    <i class="fa-solid fa-tablet-screen-button"></i>
-                    <h2>Networking Projects</h2>
-                    <p>With experience in Java networking projects, I develop client-server applications that simulate
-                        real-world scenarios like file transfers. My skills include socket programming, data streaming,
-                        and protocol-based communication in JavaFX environments.</p>
-                    <!--a href="#">Learn more</a-->
+                    <i class="fa-solid fa-database" aria-hidden="true"></i>
+                    <h2>Database Development</h2>
+                    <p>Designing relational data structures and working with SQL databases to support application features, data access, and reporting.</p>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-mobile-screen" aria-hidden="true"></i>
+                    <h2>Mobile Development</h2>
+                    <p>Exploring and developing cross-platform applications with Xamarin.Forms and .NET MAUI, including API and database integration.</p>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-plug" aria-hidden="true"></i>
+                    <h2>API Development</h2>
+                    <p>Building and integrating RESTful APIs to connect application interfaces, backend services, and databases.</p>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
+                    <h2>Cloud and Deployment</h2>
+                    <p>Working with application hosting and deployment workflows using platforms and tools such as Azure, Docker, and Render.</p>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-tablet-screen-button" aria-hidden="true"></i>
+                    <h2>Software and Networking</h2>
+                    <p>Building Java client-server projects using sockets, streams, JavaFX interfaces, and protocol-based communication.</p>
                 </div>
             </div>
         </div>
     </div>
+    <!-- End of Technical Focus -->
 
 
-    <!-- End of Services page-->
-
-
-    <!-- Portfolio page-->
+    <!-- Portfolio page -->
     <div id="portfolio">
         <div class="container">
             <h1 class="sub-title">My Projects</h1>
+            <p class="section-intro">
+                A selection of academic, personal, and in-progress projects showcasing my experience with different technologies and approaches.
+            </p>
+
             <div class="work-list">
                 <div class="work">
-                    <img src="images/UJCivilLogo.jpg">
+                    <img src="images/UJCivilLogo.jpg" alt="UJCivil society club application logo" loading="lazy">
                     <div class="layer">
-                        <h3>UJCivil: Web & Mobile App for UJCIVIL Society Club</h3>
-                        <p>Designed and developed a full-stack web and mobile solution for the UJCIVIL Society Club
-                            using ASP.NET Web API and Xamarin.Forms. Hosted on Microsoft Azure, the platform enables
-                            members to access resources, manage events, and engage with club activities through a
-                            responsive and user-friendly interface.</p>
-                        <a href="https://youtu.be/6G9XnhJ-6vA" target="_blank"><i
-                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-
-                </div>
-                <div class="work">
-                    <img src="images/farm care logo.png">
-                    <div class="layer">
-                        <h3>FarmCare: BlockChain Application</h3>
-                        <p>Created a Java and JavaFX application called "Farm Care" that enables farmers to record and
-                            track the vaccination status of their farm animals. This project integrates blockchain
-                            technology to ensure secure and tamper-proof record-keeping for each animal's vaccination
-                            history.</p>
-                        <a href="https://youtu.be/to2yhkrPdnc"><i
-                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/earthwise.png">
-                    <div class="layer">
-                        <h3>Earthwise: E-commerce Website</h3>
-                        <p>A functional e-commerce platform showcasing my skills in web development. Features include
-                            product browsing, shopping cart management, and more.</p>
-                        <a href="https://www.youtube.com/watch?v=bvwk9OYQ2DE"><i
-                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/aisnake.png">
-                    <div class="layer">
-                        <h3>AI Snake Game</h3>
-                        <p>A beginner-friendly machine learning project where I applied reinforcement learning
-                            techniques to develop a Snake game. This project helped me gain hands-on experience in AI
-                            concepts and game development, showcasing my enthusiasm to explore and learn artificial
-                            intelligence</p>
-                        <a href="https://github.com/ReageNkoana/SnakeGameAI"><i
-                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <!-- <div class="work">
-                    <img src="images/art1.png" alt="Client Portfolio Screenshot">
-                    <div class="layer">
-                        <h3>Artist Portfolio Website (Client)</h3>
-                        <p>Designed and developed a full-featured personal portfolio website for a visual artist client.
-                            The site showcases artwork, biography, education, and exhibition history, and includes
-                            interactive elements such as a modal gallery, animated transitions, and a contact form with
-                            form handling integration.</p>
-                        <a href="https://reagenkoana.github.io/Client-Bongiwe-s-Art-Portfolio/#home" target="_blank">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        <h3>UJCivil: Web and Mobile Application</h3>
+                        <p>Developed a web and mobile solution for the UJCIVIL Society Club using ASP.NET Web API and Xamarin.Forms. Hosted on Microsoft Azure, the platform supports access to resources, event management, and engagement with club activities.</p>
+                        <a href="https://youtu.be/6G9XnhJ-6vA" target="_blank" rel="noopener noreferrer" aria-label="Watch the UJCivil project demo">
+                            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                         </a>
                     </div>
-                </div> -->
+                </div>
 
                 <div class="work">
-                    <img src="images/work-3.png">
+                    <img src="images/buddy.png" alt="CodeBuddy AI assistant project" loading="lazy">
                     <div class="layer">
-                        <h3>ZEDEM Audio Downloader: Java Networking Project</h3>
-                        <p>Developed a JavaFX-based client-server application simulating file (audio) downloads over a
-                            local network. The project demonstrates proficiency in Java networking, including the use of
-                            sockets, streams, and protocol handling to transfer data between a custom-built server and
-                            client interface.</p>
-                        <a href="https://github.com/ReageNkoana/Client-Server-Audio-Downloader"><i
-                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <h3>CodeBuddy: AI Desktop Voice Assistant</h3>
+                        <p>An in-development desktop assistant built with Tauri, React, and Python. It combines voice input, streamed AI responses, and text-to-speech through a Python FastAPI backend, with work on voice selection and speech interruption.</p>
+                        <a href="https://github.com/ReageNkoana/CodeBuddy" target="_blank" rel="noopener noreferrer" aria-label="View CodeBuddy on GitHub">
+                            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="images/componenthub-logo.png" alt="ComponentHub platform logo" loading="lazy">
+                    <div class="layer">
+                        <h3>ComponentHub: Visual App Builder</h3>
+                        <p>An in-development low-code platform for storing reusable UI components and visually assembling pages. Built with ASP.NET Core, React, TypeScript, and PostgreSQL, with JWT authentication, refresh tokens, and role-based access control.</p>
+                        <a href="https://componenthub-2xph.onrender.com/Landing" target="_blank" rel="noopener noreferrer" aria-label="Visit ComponentHub">
+                            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="images/farm care logo.png" alt="FarmCare livestock record project logo" loading="lazy">
+                    <div class="layer">
+                        <h3>FarmCare: Blockchain Application</h3>
+                        <p>A Java and JavaFX application for recording and tracking livestock vaccination status. The project uses blockchain concepts to support tamper-evident records of animals' vaccination histories.</p>
+                        <a href="https://youtu.be/to2yhkrPdnc" target="_blank" rel="noopener noreferrer" aria-label="Watch the FarmCare project demo">
+                            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="images/earthwise.png" alt="Earthwise e-commerce website" loading="lazy">
+                    <div class="layer">
+                        <h3>Earthwise: E-commerce Website</h3>
+                        <p>A functional e-commerce project featuring product browsing, shopping cart management, and core online shopping interactions.</p>
+                        <a href="https://www.youtube.com/watch?v=bvwk9OYQ2DE" target="_blank" rel="noopener noreferrer" aria-label="Watch the Earthwise project demo">
+                            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="work">
+                    <img src="images/aisnake.png" alt="AI Snake game project" loading="lazy">
+                    <div class="layer">
+                        <h3>AI Snake Game</h3>
+                        <p>A Python game project exploring reinforcement learning. Developed with Pygame and PyTorch to practise machine learning concepts alongside game development.</p>
+                        <a href="https://github.com/ReageNkoana/SnakeGameAI" target="_blank" rel="noopener noreferrer" aria-label="View AI Snake Game on GitHub">
+                            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!--
+                <div class="work">
+                    <img src="images/art1.png" alt="Client portfolio screenshot" loading="lazy">
+                    <div class="layer">
+                        <h3>Artist Portfolio Website (Client)</h3>
+                        <p>Designed and developed a personal portfolio website for a visual artist, showcasing artwork, biography, education, and exhibition history, with an interactive gallery and contact form.</p>
+                        <a href="https://reagenkoana.github.io/Client-Bongiwe-s-Art-Portfolio/#home" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                -->
+
+                <div class="work">
+                    <img src="images/work-3.png" alt="ZEDEM Java audio downloader project" loading="lazy">
+                    <div class="layer">
+                        <h3>ZEDEM Audio Downloader: Java Networking</h3>
+                        <p>A JavaFX client-server application that simulates audio file transfers over a local network. Demonstrates socket programming, streams, and protocol handling between a custom server and client.</p>
+                        <a href="https://github.com/ReageNkoana/Client-Server-Audio-Downloader" target="_blank" rel="noopener noreferrer" aria-label="View ZEDEM Audio Downloader on GitHub">
+                            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-            <!--a href="https://github.com/ReageNkoana" class="btn">See more</a-->
+
+            <a href="https://github.com/ReageNkoana" class="btn" target="_blank" rel="noopener noreferrer">More on GitHub</a>
         </div>
     </div>
-    <!-- End of Portfolio page-->
+    <!-- End of Portfolio page -->
 
 
-
-    <!-- Contact page-->
+    <!-- Contact page -->
     <div id="contact">
         <div class="container">
             <div class="row">
                 <div class="contact-left">
                     <h1 class="sub-title">Contact Me</h1>
-                    <p><i class="fa-solid fa-paper-plane"></i>reagenkoana@gmail.com</p>
-                    <p><i class="fa-solid fa-square-phone"></i>066 236 0922</p>
+
+                    <p>
+                        <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                        <a href="mailto:reagenkoana@gmail.com">reagenkoana@gmail.com</a>
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-square-phone" aria-hidden="true"></i>
+                        <a href="tel:+27662360922">066 236 0922</a>
+                    </p>
+
                     <div class="social-icons">
-                        <!--a href=""><i class="fa-brands fa-facebook"></i></a>
-                        <a href=""><i class="fa-brands fa-twitter-square"></i></a>
-                        <a href=""><i class="fa-brands fa-instagram"></i></a-->
-                        <a href="https://www.linkedin.com/in/reage-nkoana-50697032b/"><i
-                                class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/reage-nkoana-50697032b/" target="_blank" rel="noopener noreferrer" aria-label="Visit my LinkedIn profile">
+                            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                        </a>
+
+                        <a href="https://github.com/ReageNkoana" target="_blank" rel="noopener noreferrer" aria-label="Visit my GitHub profile">
+                            <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        </a>
                     </div>
+
                     <a href="images/Reage Nkoana CV.pdf" download class="btn btn2">Download CV</a>
                 </div>
+
                 <div class="contact-right">
                     <form action="https://api.web3forms.com/submit" method="POST">
                         <input type="hidden" name="access_key" value="2ed07363-871f-4b96-b8f2-e1669face776">
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <textarea name="message" rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn btn2">Submit</button>
+                        <input type="hidden" name="subject" value="New message from Reage's portfolio">
+                        <input type="hidden" name="from_name" value="Reage Nkoana Portfolio">
+
+                        <label class="visually-hidden" for="contact-name">Your name</label>
+                        <input id="contact-name" type="text" name="name" placeholder="Your Name" autocomplete="name" required>
+
+                        <label class="visually-hidden" for="contact-email">Your email</label>
+                        <input id="contact-email" type="email" name="email" placeholder="Your Email" autocomplete="email" required>
+
+                        <label class="visually-hidden" for="contact-message">Your message</label>
+                        <textarea id="contact-message" name="message" rows="6" placeholder="Your Message" required></textarea>
+
+                        <button type="submit" class="btn btn2">Send Message</button>
                     </form>
                 </div>
             </div>
-
         </div>
-        <div class="copyright ">
-            <p>Copyright © Reage.</p>
+
+        <div class="copyright">
+            <p>Copyright &copy; <span id="copyright-year"></span> Reage Nkoana.</p>
         </div>
     </div>
-
-
+    <!-- End of Contact page -->
 
 
     <script>
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
+        // About section tabs
+        const tablinks = document.getElementsByClassName("tab-links");
+        const tabcontents = document.getElementsByClassName("tab-contents");
 
-        function opentab(tabname) {
-
-            for (tablink of tablinks) {
+        function opentab(tabname, clickedTab) {
+            for (const tablink of tablinks) {
                 tablink.classList.remove("active-link");
+                tablink.setAttribute("aria-selected", "false");
             }
 
-            for (tabcontent of tabcontents) {
+            for (const tabcontent of tabcontents) {
                 tabcontent.classList.remove("active-tab");
+                tabcontent.hidden = true;
             }
 
-            event.currentTarget.classList.add("active-link");
+            clickedTab.classList.add("active-link");
+            clickedTab.setAttribute("aria-selected", "true");
 
-            document.getElementById(tabname).classList.add("active-tab");
-
-
+            const selectedContent = document.getElementById(tabname);
+            selectedContent.classList.add("active-tab");
+            selectedContent.hidden = false;
         }
 
-    </script>
-    <script>
+        function handleTabKey(event, tabname, clickedTab) {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                opentab(tabname, clickedTab);
+            }
+        }
 
-        var sidemenu = document.getElementById("sidemenu");
+        // Mobile and tablet navigation
+        const sidemenu = document.getElementById("sidemenu");
+        const openMenuButton = document.querySelector(".open-menu-button");
 
         function openmenu() {
             sidemenu.style.right = "0";
-        }
-        function closemenu() {
-            sidemenu.style.right = "-200px";
+            openMenuButton.setAttribute("aria-expanded", "true");
         }
 
-        // Wait for DOM to load
-        document.addEventListener('DOMContentLoaded', function () {
-            // Add 'loaded' class to body to trigger animations
-            document.body.classList.add('loaded');
+        function closemenu() {
+            sidemenu.style.right = "";
+            openMenuButton.setAttribute("aria-expanded", "false");
+        }
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                closemenu();
+            }
         });
 
+        // Mobile project cards:
+        // The overlay is hidden by default and appears when a card is tapped.
+        document.querySelectorAll(".work").forEach(function (project) {
+            project.addEventListener("click", function (event) {
+                if (window.matchMedia("(max-width: 600px)").matches) {
+                    // Allow project links to work normally.
+                    if (event.target.closest("a")) {
+                        return;
+                    }
 
+                    const wasActive = project.classList.contains("active");
+
+                    // Close any currently open project overlay.
+                    document.querySelectorAll(".work.active").forEach(function (item) {
+                        item.classList.remove("active");
+                    });
+
+                    // Open the tapped card unless it was already open.
+                    if (!wasActive) {
+                        project.classList.add("active");
+                    }
+                }
+            });
+        });
+
+        // Update copyright year automatically.
+        document.getElementById("copyright-year").textContent = new Date().getFullYear();
+
+        // Wait for DOM to load.
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.classList.add("loaded");
+        });
     </script>
-
-
-
-
-
 </body>
 
 </html>
